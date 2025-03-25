@@ -142,10 +142,10 @@ try:
     from cucim import CuImage
     from cellvit.utils.download_example_files import check_test_database
 
-    log_message("Downloading example files...")
-    check_test_database()
+    #log_message("Downloading example files...")
+    # check_test_database()
     log_message("Opening example Image with CuCIM")
-    image = CuImage("./test_database/x40_svs/JP2K-33003-2.svs")
+    image = CuImage("/scratch/nmoreau/JP2K-33003-2.svs")
     image.size()
     image.resolutions
     image.read_region((0, 0), (1000, 1000))
