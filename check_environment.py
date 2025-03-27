@@ -146,6 +146,7 @@ try:
     # check_test_database()
     log_message("Opening example Image with CuCIM")
     image = CuImage("/scratch/nmoreau/CellViT_2025/WSIs/A_hNiere_S32.ome.tif")
+    print("image open")
     image.size()
     image.resolutions
     image.read_region((0, 0), (1000, 1000))
