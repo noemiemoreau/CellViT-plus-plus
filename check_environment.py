@@ -148,7 +148,9 @@ try:
     image = CuImage("/scratch/nmoreau/CellViT_2025/WSIs/A_hNiere_S32.ome.tif")
     print("image open")
     image.size()
+    print("size ok")
     image.resolutions
+    print("reso ok")
     image.read_region((0, 0), (1000, 1000))
     log_message("Imported CuCIM and loaded example WSI", "SUCCESS")
 
