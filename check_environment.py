@@ -151,7 +151,7 @@ try:
     print(image.size())
     image.resolutions
     print(image.resolutions)
-    image.read_region((0, 0), (1000, 1000), level = 0)
+    image.read_region((0, 0), (512, 512), level = 0)
     log_message("Imported CuCIM and loaded example WSI", "SUCCESS")
 
 except Exception as e:
