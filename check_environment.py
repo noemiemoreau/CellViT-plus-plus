@@ -145,7 +145,7 @@ try:
     #log_message("Downloading example files...")
     # check_test_database()
     log_message("Opening example Image with CuCIM")
-    image = CuImage("/scratch/nmoreau/JP2K-33003-2.svs")
+    image = CuImage("/scratch/nmoreau/CellViT_2025/WSIs/A_hNiere_S32.ome.tif")
     image.size()
     image.resolutions
     image.read_region((0, 0), (1000, 1000))
