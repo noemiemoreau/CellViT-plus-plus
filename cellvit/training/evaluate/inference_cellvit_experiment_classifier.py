@@ -202,7 +202,7 @@ class CellViTClassifierInferenceExperiment(ABC):
                 * Classifier
                 * Configuration for training the classifier
         """
-        model_checkpoint = torch.load(checkpoint_path, map_location="cpu")
+        model_checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
         run_conf = unflatten_dict(model_checkpoint["config"], ".")
 
         model = LinearClassifier(
@@ -233,7 +233,6 @@ class CellViTClassifierInferenceExperiment(ABC):
 
         # unpack checkpoint
         cellvit_run_conf = unflatten_dict(model_checkpoint["config"], ".")
-        print(model_checkpoint["arch"])
         model = self._get_cellvit_architecture(
             model_type=model_checkpoint["arch"], model_conf=cellvit_run_conf
         )
