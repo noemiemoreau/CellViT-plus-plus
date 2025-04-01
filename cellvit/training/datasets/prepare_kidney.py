@@ -103,9 +103,9 @@ if __name__ == "__main__":
                             outdict = {"inst_map": GT_inst_map_patch, "type_map": GT_type_map_patch}
                             np.save(labels_path + image_name + "_" + str(roi_id) + "_" + str(path_number) + ".npy", outdict)
                             if image_name in TRAIN_VAL_DICT["train"]:
-                                train_list.add([image_name + "_" + str(roi_id) + "_" + str(path_number)])
+                                train_list.append([image_name + "_" + str(roi_id) + "_" + str(path_number)])
                             elif image_name in TRAIN_VAL_DICT["val"]:
-                                val_list.add([image_name + "_" + str(roi_id) + "_" + str(path_number)])
+                                val_list.append([image_name + "_" + str(roi_id) + "_" + str(path_number)])
                             # plt.imshow(WSI_patch)
                             # plt.show()
                             # plt.imshow(GT_inst_map_patch)
