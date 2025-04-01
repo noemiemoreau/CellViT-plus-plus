@@ -77,6 +77,7 @@ class CellViTInfExpKidney(CellViTClassifierInferenceExperiment):
             normalize_stains=normalize_stains,
             transforms=transforms,
         )
+        print("size data: " + len(dataset))
         dataset.cache_dataset()
 
         return dataset
