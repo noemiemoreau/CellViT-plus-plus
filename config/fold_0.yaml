@@ -28,7 +28,7 @@ data:
     6: "Outside"
     7: "Unclassified"
 
-cellvit_path: /scratch/nmoreau/CellViT/checkpoints/CellViT-256-x40-AMP.pth
+cellvit_path: /scratch/nmoreau/CellViT_2025/checkpoints/CellViT-256-x40-AMP.pth
 
 model:
   hidden_dim: 256
