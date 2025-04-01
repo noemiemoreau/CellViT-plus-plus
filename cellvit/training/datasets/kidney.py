@@ -62,6 +62,7 @@ class KidneyDataset(Dataset):
         self.annotation_path = self.dataset_path / self.split / "labels"
 
         self.images = [f for f in sorted(self.image_path.glob("*.png"))]
+        print(self.images)
         if filelist_path is not None:
             selected_files = []
             with open(filelist_path, "r") as f:
