@@ -233,6 +233,7 @@ class CellViTClassifierInferenceExperiment(ABC):
 
         # unpack checkpoint
         cellvit_run_conf = unflatten_dict(model_checkpoint["config"], ".")
+        print(model_checkpoint["arch"])
         model = self._get_cellvit_architecture(
             model_type=model_checkpoint["arch"], model_conf=cellvit_run_conf
         )
