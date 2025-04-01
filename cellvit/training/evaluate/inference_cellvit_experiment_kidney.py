@@ -71,7 +71,7 @@ class CellViTInfExpKidney(CellViTClassifierInferenceExperiment):
         Returns:
             Dataset: CoNSeP Dataset
         """
-        dataset = CoNSePDataset(
+        dataset = KidneyDataset(
             dataset_path=self.dataset_path,
             split="test",
             normalize_stains=normalize_stains,
