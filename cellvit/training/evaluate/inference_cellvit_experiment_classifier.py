@@ -649,7 +649,8 @@ class CellViTClassifierInferenceExperiment(ABC):
                 class_predictions, probs = self._get_classifier_batch_result(
                     cell_tokens, threshold
                 )
-
+                print(class_predictions)
+                print(cell_types)
                 classifier_output["predictions"].append(class_predictions)
                 classifier_output["probabilities"].append(probs)
                 classifier_output["gt"].append(cell_types)
