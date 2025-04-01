@@ -35,6 +35,7 @@ if __name__ == "__main__":
     train_list = []
     val_list = []
     for image_name in os.listdir(WSIs_path):
+        print(val_list)
         if not image_name.startswith("."):
             image_name = image_name[:-8]
             print(image_name)
