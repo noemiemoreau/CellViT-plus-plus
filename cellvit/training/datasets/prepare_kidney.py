@@ -35,7 +35,6 @@ if __name__ == "__main__":
     train_list = []
     val_list = []
     for image_name in os.listdir(WSIs_path):
-        print(val_list)
         if not image_name.startswith("."):
             image_name = image_name[:-8]
             print(image_name)
@@ -122,6 +121,7 @@ if __name__ == "__main__":
         csv_writer = csv.writer(f)
         csv_writer.writerows(train_list)
     with open("/scratch/nmoreau/CellViT_2025/kidney_data_256_40x/splits/fold_0/val.csv", 'w') as f:
-        csv_writer = csv.writer(val_list)
+        csv_writer = csv.writer(f)
+        csv_writer.writerows(val_list)
 
 
