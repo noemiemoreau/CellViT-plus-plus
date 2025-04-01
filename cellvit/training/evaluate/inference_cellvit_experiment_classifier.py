@@ -638,6 +638,7 @@ class CellViTClassifierInferenceExperiment(ABC):
                 enumerate(inference_embedding_dataloader),
                 total=len(inference_embedding_dataloader),
             )
+            print(len(inference_embedding_dataloader))
             for _, batch in inference_loop:
                 cell_tokens = batch[0].to(
                     self.device
