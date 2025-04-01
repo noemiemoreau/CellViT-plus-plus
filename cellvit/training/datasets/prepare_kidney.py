@@ -86,10 +86,10 @@ if __name__ == "__main__":
                             rr, cc = polygon(poly[:, 0], poly[:, 1], (GT_inst_map.shape[1], GT_inst_map.shape[0]))
                             GT_inst_map[cc, rr] = i
                             GT_type_map[cc, rr] = TYPE_NUCLEI_DICT_inv[name]
-                path_number = 0
+                patch_number = 0
                 for x in range(0, WSI_roi.shape[0], patch_size[0]):
                     for y in range(0, WSI_roi.shape[1], patch_size[1]):
-                        path_number += 1
+                        patch_number += 1
                         WSI_patch = WSI_roi[x:x + patch_size[0], y:y + patch_size[1]]
                         GT_inst_map_patch = GT_inst_map[x:x + patch_size[0], y:y + patch_size[1]]
                         GT_type_map_patch = GT_type_map[x:x + patch_size[0], y:y + patch_size[1]]
@@ -98,14 +98,14 @@ if __name__ == "__main__":
                         if GT_inst_map_patch.shape == patch_size and rand == 0:
                             # print(WSI_patch.shape)
                             WSI_patch_pil = Image.fromarray(WSI_patch)
-                            WSI_patch_pil.save(images_path + image_name + "_" + str(roi_id) + "_" + str(path_number) + ".png")
+                            WSI_patch_pil.save(images_path + image_name + "_" + str(roi_id) + "_" + str(patch_number) + ".png")
 
                             outdict = {"inst_map": GT_inst_map_patch, "type_map": GT_type_map_patch}
-                            np.save(labels_path + image_name + "_" + str(roi_id) + "_" + str(path_number) + ".npy", outdict)
+                            np.save(labels_path + image_name + "_" + str(roi_id) + "_" + str(patch_number) + ".npy", outdict)
                             if image_name in TRAIN_VAL_DICT["train"]:
-                                train_list.append([image_name + "_" + str(roi_id) + "_" + str(path_number)])
+                                train_list.append([image_name + "_" + str(roi_id) + "_" + str(patch_number)])
                             elif image_name in TRAIN_VAL_DICT["val"]:
-                                val_list.append([image_name + "_" + str(roi_id) + "_" + str(path_number)])
+                                val_list.append([image_name + "_" + str(roi_id) + "_" + str(patch_number)])
                             # plt.imshow(WSI_patch)
                             # plt.show()
                             # plt.imshow(GT_inst_map_patch)
