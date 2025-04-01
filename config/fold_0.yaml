@@ -1,0 +1,52 @@
+logging:
+  mode: offline
+  project: cellvit++
+  notes: cellvit++
+  log_comment: cellvit++
+  wandb_dir: /scratch/nmoreau/CellViT_2025/logs_local
+  log_dir: /scratch/nmoreau/CellViT_2025/logs_local
+  level: Debug
+
+random_seed: 19
+
+gpu: 0
+
+data:
+  dataset: SegmentationDataset
+  dataset_path: /scratch/nmoreau/CellViT_2025/kidney_data_256_40x/
+  normalize_stains_train: false
+  normalize_stains_val: false
+  num_classes: 7
+  train_filelist: /scratch/nmoreau/CellViT_2025/kidney_data_256_40x/splits/fold_0/train.csv
+  val_filelist: /scratch/nmoreau/CellViT_2025/kidney_data_256_40x/splits/fold_0/val.csv
+  label_map:
+    1: "Opal_480",
+    2: "Opal_520",
+    3: "Opal_570",
+    4: "Opal_620",
+    5: "Opal_690",
+    6: "Outside",
+    7: "Unclassified"
+
+cellvit_path: /scratch/nmoreau/CellViT/checkpoints/CellViT-256-x40-AMP.pth
+
+model:
+  hidden_dim: 256
+
+training:
+  cache_cell_dataset: true
+  batch_size: 16
+  epochs: 130
+  drop_rate: 0.1
+  optimizer: AdamW
+  optimizer_hyperparameter:
+    betas:
+    - 0.85
+    - 0.9
+    lr: 0.0003
+    weight_decay: 0.0001
+  early_stopping_patience: 20
+  mixed_precision: true
+  eval_every: 1
+  scheduler:
+    scheduler_type: exponential
