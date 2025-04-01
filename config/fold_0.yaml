@@ -20,12 +20,12 @@ data:
   train_filelist: /scratch/nmoreau/CellViT_2025/kidney_data_256_40x/splits/fold_0/train.csv
   val_filelist: /scratch/nmoreau/CellViT_2025/kidney_data_256_40x/splits/fold_0/val.csv
   label_map:
-    1: "Opal_480",
-    2: "Opal_520",
-    3: "Opal_570",
-    4: "Opal_620",
-    5: "Opal_690",
-    6: "Outside",
+    1: "Opal_480"
+    2: "Opal_520"
+    3: "Opal_570"
+    4: "Opal_620"
+    5: "Opal_690"
+    6: "Outside"
     7: "Unclassified"
 
 cellvit_path: /scratch/nmoreau/CellViT/checkpoints/CellViT-256-x40-AMP.pth
