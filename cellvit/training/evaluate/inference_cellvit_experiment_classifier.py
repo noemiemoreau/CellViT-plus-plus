@@ -229,7 +229,7 @@ class CellViTClassifierInferenceExperiment(ABC):
                 * CellViT-Model
                 * Dictionary with CellViT-Model configuration
         """
-        model_checkpoint = torch.load(checkpoint_path, map_location="cpu")
+        model_checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
 
         # unpack checkpoint
         cellvit_run_conf = unflatten_dict(model_checkpoint["config"], ".")
